@@ -21,6 +21,7 @@
 		01FD44D1180FC41400658E68 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FD44B3180FC41400658E68 /* UIKit.framework */; };
 		01FD44D9180FC41400658E68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FD44D7180FC41400658E68 /* InfoPlist.strings */; };
 		01FD44DB180FC41400658E68 /* Normal_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD44DA180FC41400658E68 /* Normal_CalculatorTests.m */; };
+		01FD44E6180FC78200658E68 /* NWCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD44E5180FC78200658E68 /* NWCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		01FD44D6180FC41400658E68 /* Normal_CalculatorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Normal_CalculatorTests-Info.plist"; sourceTree = "<group>"; };
 		01FD44D8180FC41400658E68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01FD44DA180FC41400658E68 /* Normal_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Normal_CalculatorTests.m; sourceTree = "<group>"; };
+		01FD44E4180FC78200658E68 /* NWCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NWCalculator.h; sourceTree = "<group>"; };
+		01FD44E5180FC78200658E68 /* NWCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NWCalculator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 				01FD44C1180FC41400658E68 /* Main.storyboard */,
 				01FD44C4180FC41400658E68 /* NWViewController.h */,
 				01FD44C5180FC41400658E68 /* NWViewController.m */,
+				01FD44E7180FC79D00658E68 /* Model */,
 				01FD44C7180FC41400658E68 /* Images.xcassets */,
 				01FD44B6180FC41400658E68 /* Supporting Files */,
 			);
@@ -150,6 +154,15 @@
 				01FD44D7180FC41400658E68 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01FD44E7180FC79D00658E68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01FD44E4180FC78200658E68 /* NWCalculator.h */,
+				01FD44E5180FC78200658E68 /* NWCalculator.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FD44E6180FC78200658E68 /* NWCalculator.m in Sources */,
 				01FD44C6180FC41400658E68 /* NWViewController.m in Sources */,
 				01FD44BC180FC41400658E68 /* main.m in Sources */,
 				01FD44C0180FC41400658E68 /* NWAppDelegate.m in Sources */,

@@ -10,4 +10,16 @@
 
 @interface NWViewController : UIViewController
 
+// Outlets
+@property (strong, nonatomic) IBOutlet UILabel *displayLabel;
+
+
+
+
+// IBActions
+
+- (IBAction)clearButtonPressed:(UIButton *)sender;
+
+- (IBAction)numberButtonPressed:(UIButton *)sender;
+
 @end

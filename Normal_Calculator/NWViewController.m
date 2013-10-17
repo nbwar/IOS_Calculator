@@ -7,23 +7,50 @@
 //
 
 #import "NWViewController.h"
+#import "NWCalculator.h"
 
 @interface NWViewController ()
-
+@property (nonatomic) BOOL enteringNumber;
+@property (nonatomic, strong) NWCalculator *calculator;
 @end
 
 @implementation NWViewController
 
+@synthesize displayLabel = _displayLabel;
+@synthesize enteringNumber = _enteringNumber;
+@synthesize calculator = _calculator;
+
+-(NWCalculator *)calculator
+{
+    if(!_calculator) _calculator = [[NWCalculator alloc]init];
+    return _calculator;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// IBActions
+
+- (IBAction)clearButtonPressed:(UIButton *)sender
+{
+    
+    self.displayLabel.text = @"0";
+}
+
+
+- (IBAction)numberButtonPressed:(UIButton *)sender
+{
+    NSString *number = sender.currentTitle;
+    self.displayLabel.text = [self.displayLabel.text stringByAppendingString:number];
 }
 
 @end
