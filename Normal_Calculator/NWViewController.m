@@ -11,6 +11,7 @@
 
 @interface NWViewController ()
 @property (nonatomic) BOOL enteringNumber;
+@property (nonatomic) BOOL decimalPressed;
 @property (nonatomic, strong) NWCalculator *calculator;
 @end
 
@@ -18,6 +19,7 @@
 
 @synthesize displayLabel = _displayLabel;
 @synthesize enteringNumber = _enteringNumber;
+@synthesize decimalPressed = _decimalPressed;
 @synthesize calculator = _calculator;
 
 -(NWCalculator *)calculator
@@ -44,6 +46,8 @@
 {
     
     self.displayLabel.text = @"0";
+    self.enteringNumber = NO;
+    self.decimalPressed = NO;
 }
 
 - (IBAction)numberButtonPressed:(UIButton *)sender
@@ -60,8 +64,23 @@
 - (IBAction)posnegButtonPressed:(UIButton *)sender
 {
     float number = [self.displayLabel.text floatValue];
-    number *= -1;
-    self.displayLabel.text = [NSString stringWithFormat:@"%f", number];
+    if (number < 0) {
+        self.displayLabel.text = [self.displayLabel.text substringWithRange:NSMakeRange(1, [self.displayLabel.text length] - 1)];
+    } else {
+        self.displayLabel.text = [@"-" stringByAppendingString:self.displayLabel.text];
+    }
+    
+    
+}
+
+- (IBAction)decimalButtonPressed:(UIButton *)sender
+{
+    if (self.decimalPressed) {
+        return;
+    } else {
+        [self numberButtonPressed:sender];
+        self.decimalPressed = YES;
+    }
     
 }
 
