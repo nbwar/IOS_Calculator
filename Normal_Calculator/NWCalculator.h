@@ -11,8 +11,4 @@
 @interface NWCalculator : NSObject
 
 
-
-
-
-
 @end

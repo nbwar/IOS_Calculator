@@ -46,11 +46,23 @@
     self.displayLabel.text = @"0";
 }
 
-
 - (IBAction)numberButtonPressed:(UIButton *)sender
 {
     NSString *number = sender.currentTitle;
-    self.displayLabel.text = [self.displayLabel.text stringByAppendingString:number];
+    if (self.enteringNumber) {
+        self.displayLabel.text = [self.displayLabel.text stringByAppendingString:number];
+    } else {
+        self.displayLabel.text = number;
+        self.enteringNumber = YES;
+    }
 }
+
+
+
+
+
+
+
+
 
 @end

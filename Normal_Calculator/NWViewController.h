@@ -19,7 +19,6 @@
 // IBActions
 
 - (IBAction)clearButtonPressed:(UIButton *)sender;
-
 - (IBAction)numberButtonPressed:(UIButton *)sender;
 
 @end
