@@ -57,6 +57,14 @@
     }
 }
 
+- (IBAction)posnegButtonPressed:(UIButton *)sender
+{
+    float number = [self.displayLabel.text floatValue];
+    number *= -1;
+    self.displayLabel.text = [NSString stringWithFormat:@"%f", number];
+    
+}
+
 
 
 
