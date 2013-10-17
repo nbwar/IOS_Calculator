@@ -41,6 +41,7 @@
 }
 
 // IBActions
+#pragma mark - IBAction
 
 - (IBAction)clearButtonPressed:(UIButton *)sender
 {
@@ -48,6 +49,8 @@
     self.displayLabel.text = @"0";
     self.enteringNumber = NO;
     self.decimalPressed = NO;
+    
+
 }
 
 - (IBAction)numberButtonPressed:(UIButton *)sender
@@ -81,6 +84,16 @@
         [self numberButtonPressed:sender];
         self.decimalPressed = YES;
     }
+    
+}
+
+- (IBAction)operationButtonPressed:(UIButton *)sender
+{
+    float result = [self.calculator operationPushed:sender.currentTitle number:[self.displayLabel.text floatValue]];
+    self.displayLabel.text = [NSString stringWithFormat:@"%f", result];
+    self.enteringNumber = NO;
+    
+    
     
 }
 
