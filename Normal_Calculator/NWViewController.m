@@ -17,10 +17,10 @@
 
 @implementation NWViewController
 
-@synthesize displayLabel = _displayLabel;
-@synthesize enteringNumber = _enteringNumber;
-@synthesize decimalPressed = _decimalPressed;
-@synthesize calculator = _calculator;
+//@synthesize displayLabel = _displayLabel;
+//@synthesize enteringNumber = _enteringNumber;
+//@synthesize decimalPressed = _decimalPressed;
+//@synthesize calculator = _calculator;
 
 -(NWCalculator *)calculator
 {
@@ -69,6 +69,8 @@
     float number = [self.displayLabel.text floatValue];
     if (number < 0) {
         self.displayLabel.text = [self.displayLabel.text substringWithRange:NSMakeRange(1, [self.displayLabel.text length] - 1)];
+    } else if (number == 0) {
+        
     } else {
         self.displayLabel.text = [@"-" stringByAppendingString:self.displayLabel.text];
     }
@@ -90,11 +92,19 @@
 - (IBAction)operationButtonPressed:(UIButton *)sender
 {
     float result = [self.calculator operationPushed:sender.currentTitle number:[self.displayLabel.text floatValue]];
-    self.displayLabel.text = [NSString stringWithFormat:@"%f", result];
+    self.displayLabel.text = [NSString stringWithFormat:@"%g", result];
     self.enteringNumber = NO;
     
     
     
+}
+
+- (IBAction)equalButtonPressed:(UIButton *)sender
+{
+    self.calculator.secondNumber = [self.displayLabel.text floatValue];
+    float result = [self.calculator calculateResult];
+    self.displayLabel.text = [NSString stringWithFormat:@"%g", result];
+    self.enteringNumber = NO;
 }
 
 

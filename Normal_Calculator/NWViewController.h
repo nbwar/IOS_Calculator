@@ -23,5 +23,6 @@
 - (IBAction)posnegButtonPressed:(UIButton *)sender;
 - (IBAction)decimalButtonPressed:(UIButton *)sender;
 - (IBAction)operationButtonPressed:(UIButton *)sender;
+- (IBAction)equalButtonPressed:(UIButton *)sender;
 
 @end

@@ -17,4 +17,6 @@
 
 //-(void)clearCalc;
 -(float)operationPushed:(NSString *)operaton number:(float)number;
+
+-(float)calculateResult;
 @end
